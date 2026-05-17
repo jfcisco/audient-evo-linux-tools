@@ -13,7 +13,7 @@ First I reverse engineered the USB interface by running the official EVO Control
 
 2. Optional: Add a udev rule so you dont need to run the python script with `sudo`
     
-    ```echo 'SUBSYSTEM=="usb", ATTR{idVendor}=="2708", ATTR{idProduct}=="000[67]", MODE="0666"' | sudo tee /etc/udev/rules.d/70-audient.evo.rules```
+    ```echo ''ACTION!="remove", SUBSYSTEM=="usb", ATTR{idVendor}=="2708", ATTR{idProduct}=="0006", MODE="0660", TAG+="uaccess" | sudo tee /etc/udev/rules.d/70-audient.evo.rules```
 
 3. Optional: Edit settings in the python script to your liking.
 
